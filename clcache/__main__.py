@@ -259,6 +259,7 @@ class ManifestRepository:
             if remainingObjectsSize + stat.st_size <= maxManifestsSize:
                 remainingObjectsSize += stat.st_size
             else:
+                printTraceStatement(f'Removing {filepath}')
                 os.remove(filepath)
         return remainingObjectsSize
 
